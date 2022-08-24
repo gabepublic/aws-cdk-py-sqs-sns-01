@@ -110,6 +110,13 @@ aws-cdk-py-sqs-sns-01: destroying...
 (.venv) $
 ```
 
+- Additional cleanup not done by the the `cdk destroy`
+
+  - CloudWatch Log group; go to AWS Console "CloudWatch > Logs > Log groups"
+    and delete two log groups:
+    - `/aws/lambda/<stack-name>-CustomCDKBucketDeployment<unique-id>`
+    - `/aws/lambda/<stack-name>-CustomS3AutoDeleteObjectsCustomResourcePr-<unique-id>`
+    
 - Exit virtualenv
 ```
 (.venv) $ deactivate
